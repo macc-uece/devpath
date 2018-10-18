@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Skills</title>
+</head>
+<body>
+	<ul>
+		{% for skill in skills %}
+		<a href="{% url 'update_skill' skill.id %}">
+			<li> {{skill.name}} </li>
+		</a>
+		{% endfor %}
+	</ul>
+	<a href="{% url 'create_skill' %}">New Skill</a>
+</body>
+</html>
+
