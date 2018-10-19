@@ -3,33 +3,42 @@ from .models import Skill
 from .forms import SkillForm
 
 # Create your views here.
-def list_skills(request):
-	skills = Skill.objects.all()
-	return render(request,'skills.html',{'skills':skills})
+def index(request):
+    return render(request, 'index.html')
 
-def create_skill(request):
-	form = SkillForm(request.POST or None)
-	if form.is_valid() :
-		form.save()
-		return redirect('list_skills')
+def servicos(request):
+    return render(request, 'servicos.html')
 
-	return render(request, 'skill-form.html',{'form':form})
+def contato(request):
+    return render(request, 'contato.html')
 
-def update_skill(request, id):
-	skill = Skill.objects.get(id = id)
-	form = SkillForm(request.POST or None, instance = skill)
+# def list_skills(request):
+#     skills = Skill.objects.all()
+#     return render(request,'skills.html',{'skills':skills})
 
-	if form.is_valid():
-		form.save()
-		return redirect('list_skills')
+# def create_skill(request):
+#     form = SkillForm(request.POST or None)
+#     if form.is_valid() :
+#         form.save()
+#         return redirect('list_skills')
 
-	return render(request, 'skill-form.html',{'form':form, 'skill': skill})
+#     return render(request, 'skill-form.html',{'form':form})
 
-def delete_skill(request, id):
-	skill = Skill.objects.get(id = id)
+# def update_skill(request, id):
+#     skill = Skill.objects.get(id = id)
+#     form = SkillForm(request.POST or None, instance = skill)
 
-	if request.method == 'POST':
-		skill.delete()
-		return redirect('list_skills')
+#     if form.is_valid():
+#         form.save()
+#         return redirect('list_skills')
 
-	return render(request, 'skill-delete-confirm.html', {'skill': skill})
+#     return render(request, 'skill-form.html',{'form':form, 'skill': skill})
+
+# def delete_skill(request, id):
+#     skill = Skill.objects.get(id = id)
+
+#     if request.method == 'POST':
+#         skill.delete()
+#         return redirect('list_skills')
+
+#     return render(request, 'skill-delete-confirm.html', {'skill': skill})
