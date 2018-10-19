@@ -19,7 +19,7 @@
 
 
     {% if skill %}
-        <a href="{% url 'delete_skill' skill.id %}">Delete</a>
+        <a href="{% url 'dashboard:delete_skill' skill.id %}">Delete</a>
     {% endif %}
 </body>
 </html>
