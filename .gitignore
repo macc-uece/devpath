@@ -105,3 +105,6 @@ venv.bak/
 
 #data
 .sqlite3
+
+# Arquivos de configuração do code
+.vscode
