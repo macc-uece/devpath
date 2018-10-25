@@ -32,7 +32,7 @@ ALLOWED_HOSTS = []
 
 INSTALLED_APPS = [
     'dashboard',
-    'user',
+    'user_manager',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -132,4 +132,12 @@ STATIC_URL = '/static/'
 
 STATICFILES_DIRS = (
     os.path.join(BASE_DIR, "config/static"),
+)
+
+# Media files ( user pictures and others )
+
+MEDIA_URL = '/media/'
+
+MEDIA_ROOT = (
+    os.path.join(BASE_DIR, "media")
 )

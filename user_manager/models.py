@@ -5,13 +5,10 @@ from django.contrib.auth.models import User
 # Create your models here.
 
 class Developer(models.Model):
-    user = models.OneToOneField(User, on_delete=models.CASCADE)
-    name = models.CharField(max_length=140)
-    last_name = models.CharField(max_length=140)
-    email = models.EmailField()
 
-    class Meta:
-        ordering = ('last_name', 'name')
-    
+    user = models.OneToOneField(User, on_delete=models.CASCADE)
+    profile_picture = models.ImageField(upload_to='profile_pics', blank=True)
+
     def __str__(self):
-        return ''
+        return '{} {}, {}'.format(
+            self.user.last_name, self.user.first_name, self.user.email)
