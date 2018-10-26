@@ -4,7 +4,7 @@ python:
 services:
   - postgresql
 env:
-  -DJANGO=2.1 DB=postgresql
+  -DJANGO=2.1 DB=postgresql PILLOW=5.3
 install:
   - pip install -r requirements.dev.txt
 before_script:
