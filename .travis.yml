@@ -1,15 +1,15 @@
-language: python # => 1
-    python: # => 3
-      - "3.6"
-    services: # => 3
-      - mysql
-    env: # => 4
-      -DJANGO=2.1 DB=postgresql
-    install: # => 5
-      - pip install -r requirements.dev.txt
-    before_script: # => 6
-      - psql -U postgres -c "\i bootstrap_db.sql"
-      - python manage.py makemigrations
-      - python manage.py migrate
-    script: # => 7
-      - python manage.py test
+language: python
+python:
+  - "3.6"
+services:
+  - postgresql
+env:
+  -DJANGO=2.1 DB=postgresql
+install:
+  - pip install -r requirements.dev.txt
+before_script:
+  - psql -U postgres -c "\i bootstrap_db.sql"
+  - python manage.py makemigrations
+  - python manage.py migrate
+script:
+  - python manage.py test
