@@ -1,6 +1,11 @@
 from django.shortcuts import render
 from user_manager.forms import UserForm, DevSignUpForm
 
+from django.urls import reverse
+from django.contrib.auth.decorators import login_required
+from django.contrib.auth import authenticate, login, logout
+from django.http import HttpResponseRedirect, HttpResponse
+
 
 # Create your views here.
 
@@ -40,3 +45,31 @@ def register(request):
             'registered': registered
         }
     )
+
+
+def dev_login(request):
+
+    if request.method == 'POST':
+        username = request.POST.get('username')
+        password = request.POST.get('password')
+
+        user = authenticate(username=username, password=password)
+
+        if user:
+            if user.is_active:
+                login(request, user)
+                return HttpResponseRedirect(reverse('dashboard:index'))
+            else:
+                return HttpResponse("ACCOUNT NOT ACTIVE")
+        else:
+            print("SOMEONE TRIED TO LOGIN AND FAILED")
+            print("Username: {} Password: {}".format(username, password))
+            return HttpResponse("invalid credentials")
+    else:
+        return render(request, "login.html", {})
+
+
+@login_required
+def dev_logout(request):
+    logout(request)
+    return HttpResponseRedirect(reverse('dashboard:index'))

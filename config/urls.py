@@ -16,11 +16,14 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 
+from user_manager import views
+
 import dashboard.urls
 import user_manager.urls
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('logout', views.dev_logout, name='logout'),
     path('', include(dashboard.urls, namespace='dashboard')),
-    path('user/', include(user_manager.urls, namespace='user')),
+    path('user/', include(user_manager.urls, namespace='user_manager')),
 ]
