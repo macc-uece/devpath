@@ -10,6 +10,8 @@ from django.http import HttpResponseRedirect, HttpResponse
 # Create your views here.
 
 def register(request):
+    """docstring"""
+
     registered = False
 
     if request.method == 'POST':
@@ -48,6 +50,7 @@ def register(request):
 
 
 def dev_login(request):
+    """docstring"""
 
     if request.method == 'POST':
         username = request.POST.get('username')
