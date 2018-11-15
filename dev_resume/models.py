@@ -1,5 +1,4 @@
 from django.db import models
-# from user_manager.models import Developer
 
 
 # Create your models here.

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="./css/lux.css">
+  <link rel="stylesheet" type="text/css" href="./css/style.css">
+  <title>{% block title %} DevPath {% endblock %}</title>
+</head>
+
+<body>
+
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container">
+      <a class="navbar-brand" href="profile.html">DEVPATH</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor02" aria-controls="navbarColor02"
+        aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarColor02">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="profile.html">Perfil</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="skills.html">Curriculo</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">New option</a>
+          </li>
+        </ul>
+        <div class="form-inline my-lg-0">
+          <a href="./index.html">
+            <button type="button" class="btn btn-sm btn-danger">Logout</button>
+          </a>
+          <!-- <span class="glyphicon glyphicon-user"></span> -->
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- LOL -->
+  <br>
+  <br>
+  <br>
+
+  {% block content %}
+
+  {% endblock %}
+
+</body>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+  crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+  crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/js/bootstrap.min.js" integrity="sha384-a5N7Y/aK3qNeh15eJKGWxsqtnX/wWdSZSKp+81YjTmS15nvnvxKHuzaWwXHDli+4"
+  crossorigin="anonymous"></script>
+
+</html>
