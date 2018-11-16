@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from user_manager.forms import UserForm, DevSignUpForm
 
 from django.urls import reverse
@@ -31,7 +31,9 @@ def register(request):
 
             dev.save()
 
-            registered = True
+            # registered = True
+            return redirect('user_manager:login')
+            
         else:
             print(user_form.errors, dev_form.errors)
     else:

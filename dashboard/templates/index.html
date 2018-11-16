@@ -13,11 +13,11 @@
         <h1> DevPath </h1>
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
         <p class="lead">
-          <a href="#">
-            <button type="button" class="btn btn-outline-primary" data-toggle="modal" data-target="#cadastro">Cadastro</button>
+          <a href="/user/register">
+            <button type="button" class="btn btn-outline-primary">Cadastro</button>
           </a>
-          <a href="#">
-            <button type="button" class="btn btn-outline-primary" data-toggle="modal" data-target="#login">Login</button>
+          <a href="/user/login">
+            <button type="button" class="btn btn-outline-primary">Login</button>
           </a>
           <a href="./servicos">
             <button type="button" class="btn btn-outline-primary"> Serviços </button>
@@ -28,72 +28,6 @@
         </p>
       </main>
 
-      <!-- Modal Cadastro-->
-      <div class="modal fade" id="cadastro" tabindex="-1" role="dialog" aria-labelledby="cadastroTitle" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered" role="document">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title" id="cadastroTitle">Crie seu cadastro</h5>
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-              </button>
-            </div>
-            <!-- Link para cadastrar o usuario no sistema de cadastro-->
-            <form action="#" method="POST">      <!--exemplo action="/cadastrar"-->
-              <div class="modal-body">         
-                <div class="form-group">
-                  <label>Digite seu email</label>
-                  <input type="email" class="form-control" placeholder="Email">
-                </div>
-                <div class="form-group">
-                  <label>Crie uma senha</label>
-                  <small id="passwordHelp" class="form-text text-muted">Digite uma senha com pelo menos 6 letras ou
-                    números</small>
-                  <small id="passwordHelp" class="form-text text-muted">Nós nunca iremos compartilhar sua com ninguem!</small>
-                  <input type="password" class="form-control" aria-describedby="passwordHelp" placeholder="Senha"
-                    pattern="[A-Za-z0-9]{6,}" required>
-                </div>
-              </div>
-              <div class="modal-footer">
-                <input type="submit" value="Criar conta" class="btn btn-primary">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
-              </div>
-            </form>
-          </div>
-        </div>
-      </div>
-
-
-      <!-- Modal Login-->
-      <div class="modal fade" id="login" tabindex="-1" role="dialog" aria-labelledby="loginTitle" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered" role="document">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title" id="loginTitle">Faça o login</h5>
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-              </button>
-            </div>
-            <form action="#" method="POST"> <!--exemplo action="/login"-->
-              <div class="modal-body">
-                <div class="form-group">
-                  <label for="passcode">Email:</label>
-                  <input class="form-control" id="passcode" type="email" placeholder="Email" required />
-                </div>
-                <div class="form-group">
-                  <label>Senha</label>
-                  <input type="password" class="form-control" id="exampleInputPassword1" aria-describedby="passwordHelp"
-                    placeholder="Senha" poninput="checkSenha();" pattern="([a-zA-Z0-9]{6,})">
-                </div>
-                <div class="modal-footer">
-                  <!-- <input type="submit" value="Logar" class="btn btn-primary" onsubmit="checkEmail()"> -->
-                  <button type="submit" class="btn btn-primary">Logar</button>
-                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
-                </div>
-            </form>
-          </div>
-        </div>
-      </div>
 
     </div>
   </div>

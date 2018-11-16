@@ -1,16 +1,28 @@
 {% extends 'base.html' %}
 
 {% block body_block %}
-    <h1> Please Log In</h1>
-    <form action="{% url 'user_manager:login' %}" method="post">
-        {% csrf_token %}
-        <label for="username">Username:</label>
-        <input type="text" name="username" placeholder="Enter username">
+<div class="container">
+    <div class="container">
+        <div class="card mt-5">
+            <div class="card-body">
+                <div class="row justify-content-center">
+                    <div class="col-md-8">
+                        <form action="{% url 'user_manager:login' %}" method="post">
+                            {% csrf_token %}
+                            <h1> Realize seu login</h1>
+                            <label for="username">Username:</label>
+                            <input class="form-control" type="text" name="username">
+                            <br>
+                            <label for="password">Password:</label>
+                            <input class="form-control" type="password" name="password">
 
-        <label for="password">Password:</label>
-        <input type="password" name="password">
+                            <input class="mt-3 btn btn-primary" type="submit" value="Login">
 
-        <input type="submit" value="Login">
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
-    </form>
-{% endblock %}
+    {% endblock %}

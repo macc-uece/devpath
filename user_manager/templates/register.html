@@ -2,16 +2,30 @@
 
 {% block body_block %}
 
-    {% if registered %}
-        <h1> Thank you for registering </h1>
-    {% else %}
-        <h1>Register here!</h1>
-        <h3>Fill out the form:</h3>
-        <form method="post" enctype="multipart/form-data">
-            {% csrf_token %}
-            {{ user_form.as_p }}
-            {{ dev_form.as_p }}
-            <input type="submit" name="" value="Register">
-        </form>
-    {% endif %}
+{% if registered %}
+<h1> Thank you for registering </h1>
+
+{% else %}
+<div class="container">
+    <div class="card mt-5">
+        <div class="card-body">
+            <div class="row justify-content-center">
+                <div class="col-md-8">
+
+                    <h1>Cadastre-se aqui!</h1>
+                    <br>
+                    <h3>Preencha o formulario a seguir:</h3>
+                    <form method="post" enctype="multipart/form-data">
+                        {% csrf_token %}
+                        {{ user_form.as_p }}
+                        {{ dev_form.as_p }}
+                        <input type="submit" class="btn btn-primary" name="" value="Register">
+                    </form>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endif %}
 {% endblock %}
