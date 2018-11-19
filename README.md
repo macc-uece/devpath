@@ -1,5 +1,5 @@
 # devpath
-A tool to help developers build a descriptive and simplified CV
+A tool to help developers build a descriptive and simplified CV.
 
 # Base Config
 1 - Clone the repository.
