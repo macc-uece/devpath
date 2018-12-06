@@ -1,0 +1,13 @@
+{% load staticfiles  %}
+
+<html>
+<head>
+    {% include "partials/head.html" %}
+    <title>{% block title %} {% endblock %}</title>
+</head>
+<body>
+    {% block body_content %}
+    {% endblock %}
+    {% include "partials/scripts.html" %}
+</body>
+</html>

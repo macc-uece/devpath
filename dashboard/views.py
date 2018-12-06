@@ -1,10 +1,12 @@
 from django.shortcuts import render, redirect
-from .models import Skill
-from .forms import SkillForm
+
 
 # Create your views here.
 def index(request):
-    return render(request, 'index.html')
+    if request.user.is_authenticated:
+        return render(request, 'profile.html')
+    else:
+        return render(request, 'index.html')
 
 def servicos(request):
     return render(request, 'servicos.html')

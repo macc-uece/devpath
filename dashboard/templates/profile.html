@@ -1,0 +1,72 @@
+{% extends 'base.html' %}
+
+{% block title %} Profile {% endblock %}
+
+{% block body_content %}
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+          <a class="navbar-brand" href="profile.html">DEVPATH</a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor02" aria-controls="navbarColor02"
+            aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+    
+          <div class="collapse navbar-collapse" id="navbarColor02">
+            <ul class="navbar-nav mr-auto">
+              <li class="nav-item">
+                <a class="nav-link active" href="profile.html">Perfil</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/skills.html">Curriculo</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">New option</a>
+              </li>
+            </ul>
+            <div class="form-inline my-lg-0">
+              <a href="./index.html">
+                <button type="button" class="btn btn-sm btn-danger">Logout</button>
+              </a>
+              <!-- <span class="glyphicon glyphicon-user"></span> -->
+            </div>
+          </div>
+        </div>
+      </nav>
+    
+      <!-- LOL -->
+      <br>
+      <br>
+      <br>
+    
+      <!-- WELCOME - Informações sobre o usuário -->
+      <div class="container">
+        <div class="jumbotron">
+          <h1 class="display-6">Olá, {{ user.get_full_name }}!</h1>
+          <hr class="my-4">
+          <div class="card">
+            <div class="card-header">Informações pessoais</div>
+            <div class="card-body">
+              <p class="card-text">Username: {{user.get_username}}</p>
+              <p class="card-text">EMAIL: {{user.email}}</p>
+            </div>
+          </div>
+          <br>
+          <div class="card">
+            <div class="card-header">Sistema</div>
+            <div class="card-body">
+              <p class="card-text">Algum campo importante</p>
+              <p>&nbsp;&nbsp;&nbsp;&nbsp;- Alguma Mensagem util para esse campo</p>
+              <p>&nbsp;&nbsp;&nbsp;&nbsp;- Alguma Mensagem util para esse campo</p>
+            </div>
+          </div>
+          <a href="#">
+            <button type="button" class="btn btn-primary" style="margin-top: 3em">Alguma ação</button>
+          </a>
+        </div>
+      </div>
+    
+      </div>
+      </div>
+
+{% endblock %}
