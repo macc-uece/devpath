@@ -1,19 +1,17 @@
-<!DOCTYPE html>
-<html>
+{% extends 'base.html' %}
 
-<head>
-  {% include "partials/head.html" %}
-</head>
+{% block title %} 
+  DevPath - Home
+{% endblock %}
 
-<body id="initialPage">
-
+{% block body_content %}  
   <div class="container welcome">
     <div class="text-center">
       <main>
         <h1> DevPath </h1>
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
         <p class="lead">
-          <a href="/user/register">
+          <a href="{% url 'user_manager:register' %}">
             <button type="button" class="btn btn-outline-primary">Cadastro</button>
           </a>
           <a href="/user/login">
@@ -27,14 +25,6 @@
           </a>
         </p>
       </main>
-
-
     </div>
   </div>
-
-{% include "partials/scripts.html" %}
-
-
-</body>
-
-</html>
+{% endblock %}
