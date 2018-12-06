@@ -8,4 +8,4 @@ A tool to help developers build a descriptive and simplified CV
 
 3 - Run bootstrap_db.sql in you postgresql to initialize the database.
 
-testando o travis pra ana luiza
+"pequeno teste do travis"
