@@ -6,7 +6,7 @@ services:
 env:
   -DJANGO=2.1 DB=postgresql PILLOW=5.3
 install:
-  - pip install -r requirements.txt
+  - pip install -r requirements.dev.txt
 before_script:
   - psql -U postgres -c "\i bootstrap_db.sql"
   - python manage.py makemigrations
