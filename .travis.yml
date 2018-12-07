@@ -22,6 +22,6 @@ deploy:
   app: 
     master: devpath-fw
   api_key:
-    master: 1f8ea8e0-ae6f-42bc-b5dd-9307dfb6a979
+    master: tq6t8^ybn9yy+*g*lt79g$sxv@4p(-3t*57u8mfv5z(%%iz_x=
   run:
     - "python manage.py migrate"
