@@ -15,7 +15,7 @@ class TestServerRunning(TestCase):
 
 # Testa se todas as páginas anterior ao login estao funcionando corretamente
 class TestIfAllPagesRunning(TestCase):
-    '''Alguma descrição'''
+    '''Alguma descrição aaaa'''
     @classmethod
     def setUp(self):
         self.client = Client()
@@ -26,7 +26,7 @@ class TestIfAllPagesRunning(TestCase):
                   '/contato',
                   '/user/register',
                   '/user/login']
-                  
+
         for link in links:
             response = self.client.get(link)
             self.assertEqual(response.status_code, 200)
