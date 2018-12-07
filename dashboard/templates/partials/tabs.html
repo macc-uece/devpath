@@ -1,17 +1,17 @@
 <ul class="nav nav-tabs">
     <li class="nav-item">
-        <a class="nav-link active" href="skills.html">Skills</a>
+        <a class="nav-link active" href="{% url 'dashboard:add_skill' %}">Skill</a>
     </li>
     <li class="nav-item">
-        <a class="nav-link" href="education.html">Educação</a>
+        <a class="nav-link" href="{% url 'dashboard:add_education' %}">Education</a>
     </li>
     <li class="nav-item">
-        <a class="nav-link" href="experiences.html">Experiências</a>
+        <a class="nav-link" href="{% url 'dashboard:add_experience' %}">Experience</a>
     </li>
     <li class="nav-item dropdown">
-        <a class="nav-link" href="projects.html">Projetos</a>
+        <a class="nav-link" href="{% url 'dashboard:add_project' %}">Projects</a>
     </li>
     <li class="nav-item dropdown">
-        <a class="nav-link" href="all.html">Visualizar tudo</a>
+        <a class="nav-link" href="{% url 'dashboard:load_resume' %}">Resume</a>
     </li>
 </ul>

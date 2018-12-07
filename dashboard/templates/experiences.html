@@ -1,88 +1,31 @@
-<!DOCTYPE html>
-<html>
+{% extends 'base.html' %}
 
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1.0">
-  <link rel="stylesheet" type="text/css" href="./css/lux.css">
-  <link rel="stylesheet" type="text/css" href="./css/style.css">
-  <title>Sistema</title>
-</head>
+{% block title %} Profile {% endblock %}
 
-<body>
-
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <div class="container">
-      <a class="navbar-brand" href="profile.html">DEVPATH</a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor02" aria-controls="navbarColor02"
-        aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-
-      <div class="collapse navbar-collapse" id="navbarColor02">
-        <ul class="navbar-nav mr-auto">
-          <li class="nav-item">
-            <a class="nav-link" href="profile.html">Perfil</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link active" href="skills.html">Curriculo</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">New option</a>
-          </li>
-        </ul>
-        <div class="form-inline my-lg-0">
-          <a href="./index.html">
-            <button type="button" class="btn btn-sm btn-danger">Logout</button>
-          </a>
-          <!-- <span class="glyphicon glyphicon-user"></span> -->
-        </div>
-      </div>
-    </div>
-
-  </nav>
-
-  <!-- LOL -->
-  <br>
-  <br>
-  <br>
-
+{% block body_content %}
+{% include "partials/navbar.html" %}
   <!-- Tabs navegation -->
   <div class="container col-sm-8">
-    <ul class="nav nav-tabs">
-      <li class="nav-item">
-        <a class="nav-link" href="skills.html">Skills</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="education.html">Educação</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link active" href="experiences.html">Experiências</a>
-      </li>
-      <li class="nav-item dropdown">
-        <a class="nav-link" href="projects.html">Projetos</a>
-      </li>
-      <li class="nav-item dropdown">
-        <a class="nav-link" href="all.html">Visualizar tudo</a>
-      </li>
-    </ul>
+    {% include "partials/tabs.html" %}
 
-    <!-- ############# aba 3 #############-->
+    <!-- Skills - aba 1; -->
     <div id="myTabContent" class="tab-content">
       <div class="tab-pane fade show active" id="home">
         <div class="card p-5">
-          <h1 class="display-6">Experiências</h1>
+          <h1 class="display-6">Experience</h1>
           <hr class="my-4">
           <div class="row">
-            <form action="#" method="#" class="col-md-12">
-
+            <form action="{% url 'dashboard:add_experience' %}" method="POST" class="col-md-12">
+              {% csrf_token %}
               <!-- Input 1 -->
               <div class="input-group  mt-4">
 
                 <div class="input-group-prepend">
-                  <select>
+                  <select name="item_id">
                     <option selected>Choose...</option>
-                    <option value="1">Tempo de trabalho</option>
+                    {% for exp in exps %}
+                      <option value="{{ exp.id }}">{{ exp.name }} - {{ exp.experience_type }}</option>
+                    {% endfor %}
                   </select>
                 </div>
 
@@ -90,7 +33,7 @@
 
                 <div class="input-group-append">
                   <select>
-                    <option selected>proficiência</option>
+                    <option selected>Level</option>
                     <option value="1">1</option>
                     <option value="2">2</option>
                     <option value="3">3</option>
@@ -106,69 +49,7 @@
 
               </div>
 
-              <!-- Input 2 -->
-              <div class="input-group mt-4">
-
-                <div class="input-group-prepend">
-                  <select>
-                    <option selected>Choose...</option>
-                    <option value="1">Tempo de trabalho</option>
-
-                  </select>
-                </div>
-
-                <input type="text" class="form-control">
-
-                <div class="input-group-append">
-                  <select>
-                    <option selected>proficiência</option>
-                    <option value="1">1</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                    <option value="4">4</option>
-                    <option value="5">5</option>
-                    <option value="6">6</option>
-                    <option value="7">7</option>
-                    <option value="8">8</option>
-                    <option value="9">9</option>
-                    <option value="10">10</option>
-                  </select>
-                </div>
-
-              </div>
-
-              <!-- Input 3 -->
-              <div class="input-group mt-4">
-
-                <div class="input-group-prepend">
-                  <select>
-                    <option selected>Choose...</option>
-                    <option value="1">Tempo de trabalho</option>
-
-                  </select>
-                </div>
-
-                <input type="text" class="form-control">
-
-                <div class="input-group-append">
-                  <select>
-                    <option selected>proficiência</option>
-                    <option value="1">1</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                    <option value="4">4</option>
-                    <option value="5">5</option>
-                    <option value="6">6</option>
-                    <option value="7">7</option>
-                    <option value="8">8</option>
-                    <option value="9">9</option>
-                    <option value="10">10</option>
-                  </select>
-                </div>
-
-              </div>
-
-              <button type="submit" class="btn btn-primary mt-4">Adicionar atributo</button>
+              <button type="submit" class="btn btn-primary mt-4">Adicionar</button>
 
             </form>
           </div>
@@ -178,12 +59,4 @@
 
   </div>
 
-</body>
-<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
-  crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
-  crossorigin="anonymous"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/js/bootstrap.min.js" integrity="sha384-a5N7Y/aK3qNeh15eJKGWxsqtnX/wWdSZSKp+81YjTmS15nvnvxKHuzaWwXHDli+4"
-  crossorigin="anonymous"></script>
-
-</html>
+{% endblock %}
