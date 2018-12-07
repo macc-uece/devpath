@@ -21,13 +21,12 @@ class TestIfAllPagesRunning(TestCase):
         self.client = Client()
 
     def test_allPages(self):
-        links = [
-            '/',
-            '/servicos',
-            '/contato',
-            '/user/register',
-            '/user/login'
-        ]
+        links = [ '/',
+                  '/servicos',
+                  '/contato',
+                  '/user/register',
+                  '/user/login']
+                  
         for link in links:
             response = self.client.get(link)
             self.assertEqual(response.status_code, 200)
