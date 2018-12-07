@@ -111,3 +111,4 @@ venv.bak/
 
 # Arquivos de configuração do code
 .vscode
+staticfiles/
