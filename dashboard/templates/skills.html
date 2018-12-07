@@ -7,23 +7,6 @@
   <!-- Tabs navegation -->
   <div class="container col-sm-8">
     {% include "partials/tabs.html" %}
-    <!-- <ul class="nav nav-tabs">
-      <li class="nav-item">
-        <a class="nav-link active" href="skills.html">Skills</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="education.html">Educação</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="experiences.html">Experiências</a>
-      </li>
-      <li class="nav-item dropdown">
-        <a class="nav-link" href="projects.html">Projetos</a>
-      </li>
-      <li class="nav-item dropdown">
-        <a class="nav-link" href="all.html">Visualizar tudo</a>
-      </li>
-    </ul> -->
 
     <!-- Skills - aba 1; -->
     <div id="myTabContent" class="tab-content">
@@ -38,75 +21,11 @@
               <div class="input-group  mt-4">
 
                 <div class="input-group-prepend">
-                  <select>
+                  <select name="item_id">
                     <option selected>Choose...</option>
-                    <option value="1">Tecnologias</option>
-                    <option value="2">Linguagens de programação</option>
-                    <option value="3">Plataformas</option>
-                  </select>
-                </div>
-
-                <input type="text" class="form-control">
-
-                <div class="input-group-append">
-                  <select>
-                    <option selected>proficiência</option>
-                    <option value="1">1</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                    <option value="4">4</option>
-                    <option value="5">5</option>
-                    <option value="6">6</option>
-                    <option value="7">7</option>
-                    <option value="8">8</option>
-                    <option value="9">9</option>
-                    <option value="10">10</option>
-                  </select>
-                </div>
-
-              </div>
-
-              <!-- Input 2 -->
-              <div class="input-group mt-4">
-
-                <div class="input-group-prepend">
-                  <select>
-                    <option selected>Choose...</option>
-                    <option value="1">Tecnologias</option>
-                    <option value="2">Linguagens de programação</option>
-                    <option value="3">Plataformas</option>
-                  </select>
-                </div>
-
-                <input type="text" class="form-control">
-
-                <div class="input-group-append">
-                  <select>
-                    <option selected>proficiência</option>
-                    <option value="1">1</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                    <option value="4">4</option>
-                    <option value="5">5</option>
-                    <option value="6">6</option>
-                    <option value="7">7</option>
-                    <option value="8">8</option>
-                    <option value="9">9</option>
-                    <option value="10">10</option>
-                  </select>
-                </div>
-
-              </div>
-
-              <!-- Input 3 -->
-              <div class="input-group mt-4">
-
-                <div class="input-group-prepend">
-                  <select>
-                    <option selected>Choose...</option>
-                    <option value="1">Tecnologias</option>
-                    <option value="2">Linguagens de programação</option>
-                    <option value="3">Plataformas</option>
+                    {% for skill in skills %}
+                      <option value="{{ skill.id }}">{{ skill.name }} - {{ skill.skill_type }}</option>
+                    {% endfor %}
                   </select>
                 </div>
 

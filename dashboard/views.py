@@ -1,5 +1,6 @@
 from django.shortcuts import render, redirect
 from user_manager.models import User, Developer
+from dev_resume.models import Skill
 
 
 # Create your views here.
@@ -16,6 +17,9 @@ def add_skill(request):
         dev = Developer.objects.get(user=user)
         
         return render(request, 'skills.html')
+    elif request.method == 'GET':
+        skills = Skill.objects.all()
+        return render(request, 'skills.html', context={'skills': skills})
     else:
         return render(request, 'skills.html')
 
