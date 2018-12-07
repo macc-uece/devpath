@@ -15,3 +15,13 @@ before_script:
   - python manage.py collectstatic --noinput
 script:
   - python manage.py test
+
+deploy:
+  provider: heroku
+  buildpack: python
+  app: 
+    master: devpath-fw
+  api_key:
+    master: 388f7201-f9a1-4fae-95ab-368b804cf58f
+  run:
+    - "python manage.py migrate"
