@@ -1,5 +1,5 @@
 from django import forms
-from dev_resume.models import Resume
+from dev_resume.models import Resume, Skill
 
 
 # Your forms go here

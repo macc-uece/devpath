@@ -1,4 +1,5 @@
 from django.shortcuts import render, redirect
+from user_manager.models import User, Developer
 
 
 # Create your views here.
@@ -7,6 +8,16 @@ def index(request):
         return render(request, 'profile.html')
     else:
         return render(request, 'index.html')
+
+def add_skill(request):
+    if request.method == 'POST':
+        user_name = request.user.get_username()
+        user = User.objects.get(username=user_name)
+        dev = Developer.objects.get(user=user)
+        
+        return render(request, 'skills.html')
+    else:
+        return render(request, 'skills.html')
 
 def servicos(request):
     return render(request, 'servicos.html')

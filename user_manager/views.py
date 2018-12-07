@@ -1,5 +1,8 @@
+from datetime import datetime
+
 from django.shortcuts import render, redirect
 from user_manager.forms import UserForm, DevSignUpForm
+from dev_resume.models import Resume
 
 from django.urls import reverse
 from django.contrib.auth.decorators import login_required
@@ -30,6 +33,11 @@ def register(request):
                 dev.profile_picture = request.FILES['profile_picture']
 
             dev.save()
+
+            new_resume = Resume()
+            new_resume.owner = dev
+            new_resume.last_update = datetime.today()
+            new_resume.save()
 
             # registered = True
             return redirect('user_manager:login')
